@@ -13,6 +13,8 @@ pip install ninjag
 * [PyYAML](https://github.com/yaml/pyyaml)
 
 ## Usage
+The first argument is the output file name,  
+The rest of the arguments are input files.
 ```
 ninjag build.ninja input1.yaml input2.yaml ...
 ```
@@ -39,7 +41,7 @@ Then type command:
 ```
 ninjag build.ninja input1.yaml
 ```
-The output is:
+The output is (`build.ninja`):
 ```
 cflags = -Wall -Wconversion -Wextra
 rule cc
