@@ -1,4 +1,5 @@
 from .ninja_const import ninja_const
+from .ninja_io import ninja_io
 
 
 def ninja_build(tasks):
@@ -12,9 +13,9 @@ def ninja_build(tasks):
     output = []
     for t in tasks:
         item = "build {}: {} {}".format(
-                    " ".join(t['out']),
+                    ninja_io(t['out']),
                     t['rule'],
-                    " ".join(t['in'])
+                    ninja_io(t['in'])
                 )
         if 'const' in t:
             output.append("{}\n{}".format(

@@ -9,7 +9,8 @@ def ninja_rule(ruleDict):
             command = ...
     """
     output = []
-    for k, v in ruleDict.items():
+    for k in sorted(ruleDict.keys()):
+        v = ruleDict[k]
         output.append(
             "rule {}\n  command = {}".format(k, v)
         )

@@ -8,7 +8,8 @@ def ninja_const(inputDict, indent=""):
         a string
     """
     output = []
-    for k, v in inputDict.items():
+    for k in sorted(inputDict.keys()):
+        v = inputDict[k]
         output.append(
                 "{}{} = {}".format(indent, k, v)
             )
