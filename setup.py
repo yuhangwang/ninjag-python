@@ -19,7 +19,8 @@ setup(name='ninjag',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          'PyYAML'
+          'PyYAML',
+          'typing'
       ],
       extras_require={
           'test': ['pytest'],

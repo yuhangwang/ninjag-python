@@ -1,9 +1,8 @@
-import yaml
 import sys
 import os
 from .core import ninja_generate
-from .check_input import check_input
 from .tk import ioTK
+from .io.read import read_config_files
 
 
 def main(f_out, args):
@@ -16,9 +15,5 @@ def main(f_out, args):
 
     ioTK.save_text(
             f_out,
-            ninja_generate(
-                    check_input(
-                        yaml.load(ioTK.read_all(*args))
-                        )
-                )
+            ninja_generate(read_config_files(args))
         )
