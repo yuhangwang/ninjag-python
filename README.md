@@ -78,5 +78,23 @@ build hello.exe: cc hello.c
 
 ```
 
+
+The `const` definition can have list as value:
+```
+const:
+  W:
+  - -Wall
+  - -Werror
+  - -Wconversion
+  I:
+  - -I/home/include1
+  - -I/home/include2
+```
+The above will be translated to:
+```
+W = -Wall -Werror -Wconversion
+I = -I/home/include1 -I/home/include2
+```
+
 ## License
 MIT/X11 Steven(Yuhang) Wang (c) 2016
