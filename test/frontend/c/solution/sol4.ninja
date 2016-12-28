@@ -1,0 +1,10 @@
+I = -Idir1 -Idir2
+cflags = -Wall -Wconversion -Wextra
+
+
+rule cc
+  command = gcc $cflags $I $in -o $out
+
+
+build hello.exe: cc hello.c
+  cflags = -Wall
