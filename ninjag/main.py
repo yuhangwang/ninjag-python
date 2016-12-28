@@ -9,8 +9,6 @@ def main(f_out, args):
     if os.path.splitext(f_out)[1] == ".yaml":
         args = [f_out] + args
         f_out = "build.ninja"
-        print("output", f_out)
-        print(args)
     if len(args) == 0:
         here = os.path.dirname(os.path.realpath(__file__))
         f_usage = os.path.join(here, 'usage.txt')
