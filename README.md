@@ -1,9 +1,9 @@
 # Ninjag
-A python package for generating `Ninja` build configuration files based on user input YAML files
+A python package for generating `ninja` build configuration files based on user input YAML files
 
 ## Install
 This is a python command line app.  
-After the input you will have `ninja` command
+After the input you will have `ninjag` command
 on your path.
 ```
 pip install ninjag
