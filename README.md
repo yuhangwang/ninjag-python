@@ -61,8 +61,10 @@ ninjag build.ninja input1.yaml
 The output is (`build.ninja`):
 ```
 cflags = -Wall -Wconversion -Wextra
+
 rule cc
   command = gcc $cflags $in -o $out
+
 build hello.exe: cc hello.c
   cflags = -Wall
 
