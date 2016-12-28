@@ -1,7 +1,9 @@
 const:
   cflags: -Wall -Wconversion -Wextra
-rule:
+
+rules:
   cc: gcc $cflags $in -o $out
+
 tasks:
 - rule: cc
   in: [hello.c]

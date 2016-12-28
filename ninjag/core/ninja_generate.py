@@ -13,6 +13,6 @@ def ninja_generate(argd):
     """
     return "\n".join(
         ninja_const(argd['const']) +
-        ninja_rule(argd['rule']) +
+        ninja_rule(argd['rules']) +
         ninja_build(argd['tasks'])
         )

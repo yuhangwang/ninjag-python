@@ -1,6 +1,7 @@
 import yaml
 import sys
 from .core import ninja_generate
+from .check_input import check_input
 
 
 def main(f_out, args):
@@ -9,7 +10,7 @@ def main(f_out, args):
         with open(f, "r") as IN:
             output.append(
                 ninja_generate(
-                    yaml.load(IN.read())
+                    check_input(yaml.load(IN.read()))
                     )
                 )
     with open(f_out, 'w') as OUT:
