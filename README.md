@@ -33,8 +33,12 @@ but the combined content must have three required sections:
   - out: a `list` of output file names
   - const: a dictionary  of local constant definitions,  
     which have higher priority than the global constants
-Note that `in` and `out` are `ninja` built-in keywords,  
-and must be written as the way they are.
+Notes:
+* `in` and `out` are `ninja` built-in keywords.  
+  they must be written as the way they are.
+* the `rules` and `tasks` sections from multiple inputs  
+  will be concatenated, but `const` definitions will be  
+  overridden (files specified later have higher priority)
 
 
 ## Examples

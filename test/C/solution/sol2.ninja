@@ -1,0 +1,15 @@
+cflags = -Wall -Wconversion -Wextra
+
+
+rule cc
+  command = gcc $cflags $in -o $out
+
+rule cc2
+  command = gcc $cflags $in -o $out
+
+
+build hello.exe: cc hello.c
+  cflags = -Wall
+
+build hello.exe: cc2 hello.c
+  cflags = -Wall

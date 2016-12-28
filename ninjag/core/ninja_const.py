@@ -12,4 +12,4 @@ def ninja_const(inputDict, indent=""):
         output.append(
                 "{}{} = {}".format(indent, k, v)
             )
-    return "\n".join(output)
+    return "\n\n".join(output)

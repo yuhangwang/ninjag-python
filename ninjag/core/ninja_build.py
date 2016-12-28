@@ -11,13 +11,16 @@ def ninja_build(tasks):
     """
     output = []
     for t in tasks:
-        output.append(
-                "build {}: {} {}".format(
+        item = "build {}: {} {}".format(
                     " ".join(t['out']),
                     t['rule'],
                     " ".join(t['in'])
                 )
-            )
         if 'const' in t:
-            output.append(ninja_const(t['const'], "  "))
-    return "\n".join(output)
+            output.append("{}\n{}".format(
+                    item,
+                    ninja_const(t['const'], "  "))
+                )
+        else:
+            output.append(item)
+    return "\n\n".join(output)
