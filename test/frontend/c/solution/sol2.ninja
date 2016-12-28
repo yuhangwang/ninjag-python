@@ -1,4 +1,5 @@
 cflags = -Wall -Wconversion -Wextra
+cflags2 = -Wall -Wconversion -Wextra
 
 
 rule cc

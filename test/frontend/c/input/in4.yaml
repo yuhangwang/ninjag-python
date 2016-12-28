@@ -1,8 +1,10 @@
 const:
-  cflags: -Wall -Wconversion -Wextra
-  I:
-  - -Idir1
-  - -Idir2
+- cflags: -Wall -Wconversion -Wextra
+- dir1: /home/dir1
+- dir2: /home/dir2
+- I:
+  - -I${dir1}
+  - -I${dir2}
 
 rules:
   cc: gcc $cflags $I $in -o $out
@@ -12,4 +14,5 @@ tasks:
   in: [hello.c]
   out: [hello.exe]
   const:
-    cflags: -Wall
+  - cflags: -Wall
+  - cflags2: -Werror

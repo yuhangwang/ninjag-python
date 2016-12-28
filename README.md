@@ -25,7 +25,7 @@ ninjag <output file> <input file 1> <input file 2> ...
 
 The input configuration can span multiple `yaml` files,  
 but the combined content must have three required sections:  
-* const: a dictionary of `ninja` constant definitions
+* const: a list of dictionaries of `ninja` constant definitions
 * rules: a dictionary of `ninja` rules definitions
 * tasks: a list of dictionaries of `ninja` build tasks.  
   - rule: which `ninja` rule to apply for this task
@@ -38,27 +38,32 @@ Notes:
   they must be written as the way they are.
 * `in` and `out` can be either a string or a list of strings
 * the `rules` and `tasks` sections from multiple inputs  
-  will be concatenated, but `const` definitions will be  
-  overridden (files specified later have higher priority)
+  will be concatenated. Repeated `const` definitions will  
+  be retained (no overridden).  
+  The is an intentional design to avoid the confusion/bugs  
+  caused by mutations (overwriting).
 
 
 ## Examples
 input1.yaml
 ```
 const:
-  cflags: -Wall -Wconversion -Wextra
+- cflags: -Wall -Wconversion -Wextra
+- extra_dir: /home/include
+- I:
+  - -I${extra_dir}
 
 rules:
-  cc: gcc $cflags $in -o $out
+  cc: gcc $cflags $I $in -o $out
 
 tasks:
 - rule: cc
   in:
   - hello.c
-  out:
-  - hello.exe
+  - main.c
+  out: hello.exe
   const:
-    cflags: -Wall
+  - cflags: -Wall
 
 ```
 
@@ -69,11 +74,13 @@ ninjag build.ninja input1.yaml
 The output is (`build.ninja`):
 ```
 cflags = -Wall -Wconversion -Wextra
+extra_dir = /home/include
+I = -I${extra_dir}
 
 rule cc
   command = gcc $cflags $in -o $out
 
-build hello.exe: cc hello.c
+build hello.exe: cc hello.c main.c
   cflags = -Wall
 
 ```

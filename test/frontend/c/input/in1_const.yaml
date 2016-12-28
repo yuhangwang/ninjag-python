@@ -1,2 +1,2 @@
 const:
-  cflags: -Wall -Wconversion -Wextra
+- cflags: -Wall -Wconversion -Wextra

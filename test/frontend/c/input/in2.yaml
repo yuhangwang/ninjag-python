@@ -1,5 +1,5 @@
 const:
-  cflags: -Wall -Wconversion -Wextra
+- cflags2: -Wall -Wconversion -Wextra
 
 rules:
   cc2: gcc $cflags $in -o $out
@@ -9,4 +9,4 @@ tasks:
   in: [hello.c]
   out: [hello.exe]
   const:
-    cflags: -Wall
+  - cflags: -Wall

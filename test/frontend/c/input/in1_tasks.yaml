@@ -3,4 +3,4 @@ tasks:
   in: [hello.c]
   out: [hello.exe]
   const:
-    cflags: -Wall
+  - cflags: -Wall
