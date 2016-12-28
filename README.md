@@ -4,7 +4,7 @@ A python package for generating `ninja` build configuration files based on user 
 ## Install
 This is a python command line app.  
 After the input you will have `ninjag` command
-on your path.
+available to you.
 ```
 pip install ninjag
 ```
