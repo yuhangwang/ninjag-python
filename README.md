@@ -36,6 +36,7 @@ but the combined content must have three required sections:
 Notes:
 * `in` and `out` are `ninja` built-in keywords.  
   they must be written as the way they are.
+* `in` and `out` can be either a string or a list of strings
 * the `rules` and `tasks` sections from multiple inputs  
   will be concatenated, but `const` definitions will be  
   overridden (files specified later have higher priority)
