@@ -7,9 +7,7 @@ def ninja_build(tasks):
     Args:
         tasks (list): a list of task dictionaries
     Returns:
-        a list, each is a string like
-        build my.out: cc in.c
-            cflags = -Wall
+        a string
     """
     output = []
     for t in tasks:
@@ -21,5 +19,5 @@ def ninja_build(tasks):
                 )
             )
         if 'const' in t:
-            output = output + ninja_const(t['const'], "  ")
-    return output
+            output.append(ninja_const(t['const'], "  "))
+    return "\n".join(output)

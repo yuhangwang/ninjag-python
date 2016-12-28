@@ -13,4 +13,4 @@ def ninja_rule(ruleDict):
         output.append(
             "rule {}\n  command = {}".format(k, v)
         )
-    return output
+    return "\n".join(output)
