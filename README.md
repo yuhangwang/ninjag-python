@@ -23,7 +23,8 @@ The rest of the arguments are input files.
 ninjag <output file> <input file 1> <input file 2> ...
 ```
 
-In the input `yaml` file, there are three required sections:  
+The input configuration can span multiple `yaml` files,  
+but the combined content must have three required sections:  
 * const: a dictionary of `ninja` constant definitions
 * rules: a dictionary of `ninja` rules definitions
 * tasks: a list of dictionaries of `ninja` build tasks.  
