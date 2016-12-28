@@ -20,3 +20,4 @@ def main(f_out, args):
             f_out,
             ninja_generate(read_config_files(args))
         )
+    print("Success!\noutput =", f_out)
