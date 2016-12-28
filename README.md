@@ -26,7 +26,7 @@ ninjag <output file> <input file 1> <input file 2> ...
 The input configuration can span multiple `yaml` files,  
 but the combined content must have three required sections:  
 * const: a list of dictionaries of `ninja` constant definitions
-* rules: a dictionary of `ninja` rules definitions
+* rules: a list of dictionaries of `ninja` rule definitions
 * tasks: a list of dictionaries of `ninja` build tasks.  
   - rule: which `ninja` rule to apply for this task
   - in: a `list` of input file names
@@ -54,7 +54,7 @@ const:
   - -I${extra_dir}
 
 rules:
-  cc: gcc $cflags $I $in -o $out
+- cc: gcc $cflags $I $in -o $out
 
 tasks:
 - rule: cc

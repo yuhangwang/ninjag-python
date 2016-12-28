@@ -4,7 +4,10 @@ dir2 = /home/dir2
 I = -I${dir1} -I${dir2}
 
 
-rule cc
+rule cc2
+  command = gcc $cflags $I $in -o $out
+
+rule cc1
   command = gcc $cflags $I $in -o $out
 
 

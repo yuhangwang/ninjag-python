@@ -1,2 +1,2 @@
 rules:
-  cc: gcc $cflags $in -o $out
+- cc: gcc $cflags $in -o $out

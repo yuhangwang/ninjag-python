@@ -1,4 +1,4 @@
-from .check_const import check_const
+from .check_definitions import check_definitions
 from .check_tasks import check_tasks
 
 
@@ -19,11 +19,9 @@ def check_input(argd):
         else:
             pass
 
-        if k == "const":
-            check_const(argd['const'])
-        elif k == "tasks":
-            check_tasks(argd['tasks'])
+        if k == "const" or k == "rules":
+            check_definitions(argd[k], k)
         else:
-            pass
+            check_tasks(argd[k])
 
     return argd

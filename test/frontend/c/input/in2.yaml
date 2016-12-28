@@ -2,7 +2,7 @@ const:
 - cflags2: -Wall -Wconversion -Wextra
 
 rules:
-  cc2: gcc $cflags $in -o $out
+- cc2: gcc $cflags $in -o $out
 
 tasks:
 - rule: cc2

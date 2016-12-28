@@ -7,7 +7,8 @@ const:
   - -I${dir2}
 
 rules:
-  cc: gcc $cflags $I $in -o $out
+- cc2: gcc $cflags $I $in -o $out
+- cc1: gcc $cflags $I $in -o $out
 
 tasks:
 - rule: cc
