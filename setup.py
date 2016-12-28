@@ -8,7 +8,7 @@ with codecs_open('README.md', encoding='utf-8') as f:
 
 
 setup(name='ninjag',
-      version='0.1.3',
+      version='0.1.3.1',
       description=u"Ninja config file generator",
       long_description=long_description,
       keywords='',
