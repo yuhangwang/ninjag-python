@@ -47,8 +47,10 @@ rules:
 
 tasks:
 - rule: cc
-  in: [hello.c]
-  out: [hello.exe]
+  in:
+  - hello.c
+  out:
+  - hello.exe
   const:
     cflags: -Wall
 
