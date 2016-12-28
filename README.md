@@ -16,7 +16,7 @@ pip install ninjag
 The first argument is the output file name,  
 The rest of the arguments are input files.
 ```
-ninjag build.ninja input1.yaml input2.yaml ...
+ninjag <output file> <input file 1> <input file 2> ...
 ```
 
 ## Examples
