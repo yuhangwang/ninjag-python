@@ -11,7 +11,8 @@ def check_input(argd):
         same as input if no errors found
         otherwise exit with a message.
     """
-    for k in ['const', 'rules', 'tasks']:
+    required = ['rules', 'tasks']
+    for k in required:
         if k not in argd:
             print(
                 "Error hint: missing required field: \"{}\"".format(k))
@@ -19,9 +20,8 @@ def check_input(argd):
         else:
             pass
 
-        if k == "const" or k == "rules":
-            check_definitions(argd[k], k)
-        else:
-            check_tasks(argd[k])
+    check_definitions(argd['rules'], 'rules')
+    check_tasks(argd['tasks'])
+    check_definitions(argd['const'], 'const')
 
     return argd

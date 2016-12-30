@@ -16,4 +16,6 @@ def read_config_files(files):
         a dict
     """
     fn = fnTK.compose([ioTK.read_all, yaml.load])
-    return check_input(dictTK.merge(list(map(fn, files))))
+    default_options = {"const": []}
+    return check_input(
+        dictTK.merge([default_options] + list(map(fn, files))))

@@ -12,9 +12,12 @@ def ninja_generate(argd):
         a string (content of the Ninja build file)
     """
     return "\n\n\n".join(
-            [
-                ninja_const(argd['const']),
-                ninja_rule(argd['rules']),
-                ninja_build(argd['tasks'])
-            ]
+        filter(
+                lambda x: x != "",
+                [
+                    ninja_const(argd['const']),
+                    ninja_rule(argd['rules']),
+                    ninja_build(argd['tasks'])
+                ]
+            )
         )

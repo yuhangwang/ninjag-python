@@ -7,7 +7,13 @@ License: MIT/X11
 """
 import sys
 from .main import main
+from .show_usage import show_usage
 
 
 def cli():
-    main(sys.argv[1], sys.argv[2:])
+    if len(sys.argv) < 2:
+        show_usage()
+        print("Error hint: need at least one command line arguments\n")
+        exit()
+    else:
+        main(sys.argv[1], sys.argv[2:])
