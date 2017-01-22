@@ -8,5 +8,5 @@ tasks:
 - rule: cc
   in: [hello.c]
   out: [hello.exe]
-  const:
-  - cflags: -Wall
+  dep|: [d1 d2]
+  dep||: [a1, a2]
