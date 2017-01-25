@@ -2,5 +2,5 @@ tasks:
 - rule: cc
   in: [hello.c]
   out: [hello.exe]
-  const:
+  def:
   - cflags: -Wall

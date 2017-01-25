@@ -1,4 +1,4 @@
-from .ninja_const import ninja_const
+from .ninja_def import ninja_def
 from .ninja_io import ninja_io
 from .ninja_build_dep import ninja_build_dep
 
@@ -20,10 +20,10 @@ def ninja_build(tasks):
                     ninja_build_dep(t, "dep|"),
                     ninja_build_dep(t, "dep||")
                 )
-        if 'const' in t:
+        if 'def' in t:
             output.append("{}\n{}".format(
                     item,
-                    ninja_const(t['const'], "  "))
+                    ninja_def(t['def'], "  "))
                 )
         else:
             output.append(item)

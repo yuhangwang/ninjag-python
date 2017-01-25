@@ -1,2 +1,2 @@
-const:
+def:
 - cflags: -Wall -Wconversion -Wextra

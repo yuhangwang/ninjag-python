@@ -1,7 +1,7 @@
 from .ninja_io import ninja_io
 
 
-def ninja_const(defs, indent=""):
+def ninja_def(defs, indent=""):
     """Return a list of user defined constants
 
     If the value of the const definition is a list,

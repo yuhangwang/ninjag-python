@@ -1,4 +1,4 @@
-const:
+def:
 - cflags: -Wall -Wconversion -Wextra
 - dir1: /home/dir1
 - dir2: /home/dir2
@@ -14,6 +14,6 @@ tasks:
 - rule: cc
   in: [hello.c]
   out: [hello.exe]
-  const:
+  def:
   - cflags: -Wall
   - cflags2: -Werror

@@ -1,4 +1,4 @@
-from .ninja_const import ninja_const
+from .ninja_def import ninja_def
 from .ninja_rule import ninja_rule
 from .ninja_build import ninja_build
 
@@ -15,7 +15,7 @@ def ninja_generate(argd):
         filter(
                 lambda x: x != "",
                 [
-                    ninja_const(argd['const']),
+                    ninja_def(argd['def']),
                     ninja_rule(argd['rules']),
                     ninja_build(argd['tasks'])
                 ]

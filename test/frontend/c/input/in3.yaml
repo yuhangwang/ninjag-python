@@ -1,4 +1,4 @@
-const:
+def:
 - cflags: -Wall -Wconversion -Wextra
 
 rules:
@@ -8,5 +8,5 @@ tasks:
 - rule: cc
   in: [hello.c]
   out: [hello.exe]
-  const:
+  def:
   - cflags: -Wall
