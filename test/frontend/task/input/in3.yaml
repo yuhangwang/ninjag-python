@@ -1,0 +1,5 @@
+task:
+- out: out1.exe
+  out|: i1.txt
+  in: in1.c
+  rule: cc

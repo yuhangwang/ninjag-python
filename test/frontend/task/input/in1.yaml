@@ -1,0 +1,3 @@
+task:
+- out: out1.exe
+  rule: cc

@@ -1,0 +1,1 @@
+build out1.exe | i1.txt: cc in1.c
