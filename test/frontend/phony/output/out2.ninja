@@ -1,0 +1,3 @@
+build f1: phony /long/name/target1
+
+build f2: phony /long/name/target2

@@ -12,7 +12,12 @@ def ninja_rule(rules):
     for d in rules:
         for k in sorted(d.keys()):
             v = d[k]
-            output.append(
-                "rule {}\n  command = {}".format(k, v)
-            )
+            if k in ['include', 'subninja']:
+                output.append(
+                    "\n{}: {}\n".format(k, ninja_io(v))
+                    )
+            else:
+                output.append(
+                    "rule {}\n  command = {}".format(k, v)
+                )
     return "\n\n".join(output)

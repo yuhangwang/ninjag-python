@@ -1,0 +1,3 @@
+phony:
+- f1: /long/name/target1
+- f2: /long/name/target2

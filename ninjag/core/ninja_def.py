@@ -18,7 +18,12 @@ def ninja_def(defs, indent=""):
     for d in defs:
         for k in sorted(d.keys()):
             v = d[k]
-            output.append(
-                    "{}{} = {}".format(indent, k, ninja_io(v))
-                )
+            if k in ['include', 'subninja']:
+                output.append(
+                    "\n{}: {}\n".format(k, ninja_io(v))
+                    )
+            else:
+                output.append(
+                        "{}{} = {}".format(indent, k, ninja_io(v))
+                    )
     return "\n".join(output)
