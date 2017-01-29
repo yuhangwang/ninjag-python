@@ -6,9 +6,7 @@ def ninja_io(args):
     Returns:
         a string
     """
-    if isinstance(args, str):
-        return args
-    elif isinstance(args, list):
-        return " ".join(args)
+    if isinstance(args, list):
+        return " ".join(list(map(str, args)))
     else:
-        return ""
+        return str(args)

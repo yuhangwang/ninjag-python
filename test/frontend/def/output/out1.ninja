@@ -2,3 +2,4 @@
 include: f1.ninja
 
 var1 = value1
+ver = 10
