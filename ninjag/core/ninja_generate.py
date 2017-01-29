@@ -1,6 +1,7 @@
 from .ninja_def import ninja_def
 from .ninja_rule import ninja_rule
 from .ninja_build import ninja_build
+from .ninja_import import ninja_import
 
 
 def ninja_generate(argd):
@@ -16,8 +17,10 @@ def ninja_generate(argd):
                 lambda x: x != "",
                 [
                     ninja_def(argd['def']),
-                    ninja_rule(argd['rules']),
-                    ninja_build(argd['tasks'])
+                    ninja_rule(argd['rule']),
+                    ninja_build(argd['task']),
+                    ninja_import("include", argd['include']),
+                    ninja_import("subninja", argd['subninja'])
                 ]
             )
         )

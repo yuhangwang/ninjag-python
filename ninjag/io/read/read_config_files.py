@@ -5,6 +5,7 @@ and return a combined dictionary
 import yaml
 from ...tk import fnTK, dictTK, ioTK
 from .check_input import check_input
+from .default_config import default_config
 
 
 def read_config_files(files):
@@ -16,6 +17,5 @@ def read_config_files(files):
         a dict
     """
     fn = fnTK.compose([ioTK.read_all, yaml.load])
-    default_options = {"const": []}
     return check_input(
-        dictTK.merge([default_options] + list(map(fn, files))))
+        dictTK.merge([default_config()] + list(map(fn, files))))

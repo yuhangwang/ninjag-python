@@ -1,10 +1,10 @@
 def:
 - cflags2: -Wall -Wconversion -Wextra
 
-rules:
+rule:
 - cc2: gcc $cflags $in -o $out
 
-tasks:
+task:
 - rule: cc2
   in: [hello.c]
   out: [hello.exe]

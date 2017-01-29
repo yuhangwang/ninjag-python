@@ -11,7 +11,8 @@ def check_input(argd):
         same as input if no errors found
         otherwise exit with a message.
     """
-    required = ['rules', 'tasks']
+    # check whether the required fields exist
+    required = []
     for k in required:
         if k not in argd:
             print(
@@ -20,8 +21,9 @@ def check_input(argd):
         else:
             pass
 
-    check_definitions(argd['rules'], 'rules')
-    check_tasks(argd['tasks'])
-    check_definitions(argd['const'], 'const')
+    # check whether the formats are correct
+    check_definitions(argd['rule'], 'rule')
+    check_tasks(argd['task'])
+    check_definitions(argd['def'], 'def')
 
     return argd

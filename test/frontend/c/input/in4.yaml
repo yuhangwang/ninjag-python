@@ -6,11 +6,11 @@ def:
   - -I${dir1}
   - -I${dir2}
 
-rules:
+rule:
 - cc2: gcc $cflags $I $in -o $out
 - cc1: gcc $cflags $I $in -o $out
 
-tasks:
+task:
 - rule: cc
   in: [hello.c]
   out: [hello.exe]

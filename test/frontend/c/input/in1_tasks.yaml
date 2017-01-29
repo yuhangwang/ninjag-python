@@ -1,4 +1,4 @@
-tasks:
+task:
 - rule: cc
   in: [hello.c]
   out: [hello.exe]
