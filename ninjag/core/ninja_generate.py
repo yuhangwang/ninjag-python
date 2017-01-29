@@ -1,7 +1,7 @@
 from .ninja_def import ninja_def
 from .ninja_rule import ninja_rule
 from .ninja_build import ninja_build
-from .ninja_import import ninja_import
+from .ninja_key_value_pairs import ninja_key_value_pairs
 
 
 def ninja_generate(argd):
@@ -19,8 +19,9 @@ def ninja_generate(argd):
                     ninja_def(argd['def']),
                     ninja_rule(argd['rule']),
                     ninja_build(argd['task']),
-                    ninja_import("include", argd['include']),
-                    ninja_import("subninja", argd['subninja'])
+                    ninja_key_value_pairs("include", argd['include']),
+                    ninja_key_value_pairs("subninja", argd['subninja']),
+                    ninja_key_value_pairs("default", argd['default'])
                 ]
             )
         )

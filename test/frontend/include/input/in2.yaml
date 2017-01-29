@@ -1,0 +1,3 @@
+include:
+- file1.ninja
+- file2.ninja

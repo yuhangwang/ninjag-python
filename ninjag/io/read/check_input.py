@@ -1,5 +1,6 @@
 from .check_definitions import check_definitions
 from .check_tasks import check_tasks
+from .check_isList import check_isList
 
 
 def check_input(argd):
@@ -25,5 +26,9 @@ def check_input(argd):
     check_definitions(argd['rule'], 'rule')
     check_tasks(argd['task'])
     check_definitions(argd['def'], 'def')
+    check_isList(argd['include'], 'include')
+    check_isList(argd['subninja'], 'subninja')
+    check_isList(argd['phony'], 'phony')
+    check_isList(argd['default'], 'default')
 
     return argd
