@@ -1,3 +1,6 @@
+from .ninja_io import ninja_io
+
+
 def ninja_rule(rules):
     """Return a list of Ninja rules
 
@@ -14,7 +17,7 @@ def ninja_rule(rules):
             v = d[k]
             if k in ['include', 'subninja']:
                 output.append(
-                    "\n{}: {}\n".format(k, ninja_io(v))
+                    "{}: {}".format(k, ninja_io(v))
                     )
             else:
                 output.append(

@@ -1,0 +1,4 @@
+rule:
+- include: f1.ninja
+- rule1: value1
+- include: f2.ninja

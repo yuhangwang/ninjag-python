@@ -1,0 +1,4 @@
+include: f1.ninja
+
+rule rule1
+  command = value1
