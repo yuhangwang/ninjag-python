@@ -8,7 +8,7 @@ def check_tasks(tasks):
         exit()
 
     for i, d in enumerate(tasks):
-        for k in ["rule", "in", "out"]:
+        for k in ["rule", "out"]:
             if k not in d:
                 msg = "Error hint:  task[{}] ".format(i+1)
                 msg += "is missing required field: \"{}\"".format(k)

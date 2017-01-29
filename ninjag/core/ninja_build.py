@@ -16,7 +16,7 @@ def ninja_build(tasks):
         item = "build {0}: {1} {2}{3}{4}".format(
                     ninja_io(t['out']),
                     t['rule'],
-                    ninja_io(t['in']),
+                    ninja_io(t.get('in', '')),
                     ninja_build_dep(t, "dep|"),
                     ninja_build_dep(t, "dep||")
                 )
