@@ -18,6 +18,7 @@ def check_types(obj, name, types, n=0):
         # check each item has the required type
         if types[0] == list:
             next_level = "{}: level {}".format(name, n)
+
             def aux(obj):
                 return check_types(obj, next_level, types[1:], n+1)
             return list(map(aux, obj))
