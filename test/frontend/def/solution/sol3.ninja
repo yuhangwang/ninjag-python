@@ -1,0 +1,7 @@
+
+include: f1.ninja
+
+var1 = value1
+
+include: f2.ninja
+

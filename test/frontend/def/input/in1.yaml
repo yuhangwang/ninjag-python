@@ -1,0 +1,3 @@
+def:
+- include: f1.ninja
+- var1: value1
