@@ -1,4 +1,4 @@
-from .check_definitions import check_definitions
+from .check_types import check_types
 
 
 def check_tasks(tasks):
@@ -17,8 +17,8 @@ def check_tasks(tasks):
             else:
                 pass
 
-        if "const" in d:
-            check_definitions(d['const'], "tasks/const")
+        if "def" in d:
+            check_definitions(d['def'], "task/def", [list, dict])
         else:
             pass
 
