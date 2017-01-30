@@ -1,1 +1,1 @@
-include: file1.ninja
+include file1.ninja

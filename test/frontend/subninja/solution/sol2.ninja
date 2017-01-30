@@ -1,3 +1,3 @@
-subninja: file1.ninja
+subninja file1.ninja
 
-subninja: file2.ninja
+subninja file2.ninja

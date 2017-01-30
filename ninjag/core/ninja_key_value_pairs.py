@@ -9,9 +9,9 @@ def ninja_key_value_pairs(key, values):
     if isinstance(values, list):
         return "\n\n".join(
                 map(
-                    lambda x: "{}: {}".format(key, x),
+                    lambda x: "{} {}".format(key, x),
                     values
                     )
             )
     else:
-        return "{}: {}".format(key, values)
+        return "{} {}".format(key, values)
