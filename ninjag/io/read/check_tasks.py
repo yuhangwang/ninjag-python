@@ -18,7 +18,7 @@ def check_tasks(tasks):
                 pass
 
         if "def" in d:
-            check_definitions(d['def'], "task/def", [list, dict])
+            check_types(d['def'], "task/def", [list, dict])
         else:
             pass
 
