@@ -13,4 +13,4 @@ def assert_any(results):
         return True
     else:
         print("\n\n".join(map(lambda x: x[1], results)))
-        return False
+        exit()

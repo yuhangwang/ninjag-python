@@ -26,7 +26,7 @@ def check_input(argd):
     check_tasks(argd['task'])
 
     for key in ['def', 'rule', 'phony']:
-        check_types(argd[key], key, [list, dict])
+        assert_any([check_types(argd[key], key, [list, dict])])
 
     for key in ['include', 'subninja', 'default']:
         assert_any(

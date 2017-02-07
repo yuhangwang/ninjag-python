@@ -10,8 +10,8 @@ def check_types(obj, name, types, n=0):
     else:
         if not isinstance(obj, types[0]):
             msg = 'Error hint: field "{}"'.format(name)
-            msg += " must be of type {}".format(str(types[0]))
-            msg += "The received type is {}".format(type(obj))
+            msg += " must be of type {}, ".format(str(types))
+            msg += "but the received type is {}".format(type(obj))
             return (False, msg)
         else:
             # check each item has the required type
