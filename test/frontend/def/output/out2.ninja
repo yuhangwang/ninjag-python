@@ -1,4 +1,4 @@
 var1 = value1
 
-include: f1.ninja
+include f1.ninja
 

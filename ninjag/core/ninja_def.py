@@ -20,7 +20,7 @@ def ninja_def(defs, indent=""):
             v = d[k]
             if k in ['include', 'subninja']:
                 output.append(
-                    "\n{}: {}\n".format(k, ninja_io(v))
+                    "\n{} {}\n".format(k, ninja_io(v))
                     )
             else:
                 output.append(
